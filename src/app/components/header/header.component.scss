@@ -1,0 +1,40 @@
+
+
+
+.menu-container{
+    position: relative;
+}
+
+ul#menu {
+    text-align: center;
+    padding-top: 2%;
+}
+
+ul#menu li{
+    display:inline;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+}
+li:not(:last-child) {
+    margin-right: 10%;
+}
+
+.mat-black {
+    background-color: rgb(255, 255, 255);
+}
+
+:host {
+    position: -webkit-sticky;
+    position: sticky;
+    display: block;
+    top: 0;
+    z-index: 1000; // Assurez-vous que le header est au-dessus des autres éléments
+    width: 100%; // Le header doit occuper toute la largeur
+  }
+  
+
+button {
+  color:black;
+}
+

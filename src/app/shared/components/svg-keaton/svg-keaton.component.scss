@@ -1,0 +1,211 @@
+.svg-container {
+  height: calc(100vh - 50px);
+  margin-bottom: 50px; 
+}
+
+
+.SVGclipPath {
+
+    animation: starShine 10s infinite;
+  }
+  @keyframes starShine {
+    100% {
+      opacity: 10%;
+    }
+    90% {opacity: 20%;}
+    80% {opacity: 30%;}
+    70% {opacity: 60%;}
+    60% {opacity: 80%;}
+    50% {opacity: 100%;}
+    40% {opacity: 80%;}
+    30% {opacity: 60%;}
+    20% {opacity: 30%;}
+    10% {opacity: 20%;}
+    0% {opacity: 0%;}
+  }
+  .box {
+    width:300px;
+    height:200px;
+    background:red;
+    clip-path: url(#shape--start);
+  }
+  svg {
+    display: block;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+    
+    .st0 {
+      stroke-dasharray: 427.5171203613281;
+      stroke-dashoffset: 427.5171203613281;
+      animation: dash0 5s linear alternate infinite;
+    }
+    .st1 {
+      stroke-dasharray: 640.036376953125;
+      stroke-dashoffset: 640.036376953125;
+      animation: dash1 5s linear alternate infinite;
+    }
+    .st2 {
+      stroke-dasharray: 90.12757202148438;
+      stroke-dashoffset: 90.12757202148438;
+      animation: dash2 5s linear alternate infinite;
+    }
+    .st3 {
+      stroke-dasharray: 60.10757202148438;
+      stroke-dashoffset: 60.10757202148438;
+      animation: dash3 5s linear alternate infinite;
+    }
+    .st4 {
+      stroke-dasharray: 200.16757202148438;
+      stroke-dashoffset: 100.16757202148438;
+      animation: dash4 5s linear alternate infinite;
+    }
+    .st5 {
+      stroke-dasharray: 100.036376953125;
+      stroke-dashoffset: 100.036376953125;
+      animation: dash5 5s linear alternate infinite;
+    }
+    .st6 {
+      stroke-dasharray: 45.45;
+      stroke-dashoffset: 45.45 ;
+      animation: dash6 5s linear alternate infinite;
+    }
+    .st7 {
+      stroke-dasharray: 177.16757202148438;
+      stroke-dashoffset: 177.16757202148438;
+      animation: dash7 5s linear alternate infinite;
+    }
+    path {
+      fill: white;
+    }
+    
+    
+    @keyframes dash0 {
+      0% {
+        stroke-dashoffset: 427.5171203613281;
+        stroke-width: 1;
+        fill-opacity: 0;
+      }
+      20% {
+        fill-opacity: 0;
+      }
+      100% {
+        stroke-dashoffset: 0;
+        stroke-opacity: 1;
+        fill-opacity: 1;
+      }
+    }
+    @keyframes dash1 {
+      0% {
+        stroke-dashoffset: 640.036376953125;
+        stroke-width: 1;
+        fill-opacity: 0;
+      }
+      20% {
+        fill-opacity: 0;
+      }
+      100% {
+        stroke-dashoffset: 0;
+        stroke-opacity: 0;
+        fill-opacity: 1;
+      }
+    }
+    @keyframes dash2 {
+      0% {
+        stroke-dashoffset: 177.16757202148438;
+        stroke-width: 1;
+        fill-opacity: 0;
+      }
+      20% {
+        fill-opacity: 0;
+      }
+      100% {
+        stroke-dashoffset: 0;
+        stroke-opacity: 0;
+        fill-opacity: 1;
+      }
+    
+    }
+    @keyframes dash3 {
+      0% {
+        stroke-dashoffset: 177.16757202148438;
+        stroke-width: 1;
+        fill-opacity: 0;
+      }
+      20% {
+        fill-opacity: 0;
+      }
+      100% {
+        stroke-dashoffset: 0;
+        stroke-opacity: 0;
+        fill-opacity: 1;
+      }
+    
+    }
+    @keyframes dash4 {
+      0% {
+        stroke-dashoffset: 177.16757202148438;
+        stroke-width: 1;
+        fill-opacity: 0;
+      }
+      20% {
+        fill-opacity: 0;
+      }
+      100% {
+        stroke-dashoffset: 0;
+        stroke-opacity: 0;
+        fill-opacity: 1;
+      }
+    
+    }
+    @keyframes dash5 {
+      0% {
+        stroke-dashoffset: 100.16757202148438;
+        stroke-width: 1;
+        fill-opacity: 0;
+      }
+      20% {
+        fill-opacity: 0;
+      }
+      100% {
+        stroke-dashoffset: 0;
+        stroke-opacity: 0;
+        fill-opacity: 1;
+      }
+    
+    }
+    @keyframes dash6 {
+      0% {
+        stroke-dashoffset: 45.45;
+        stroke-width: 1;
+        fill-opacity: 0;
+      }
+      20% {
+        fill-opacity: 0;
+      }
+      100% {
+        stroke-dashoffset: 0;
+        stroke-opacity: 0;
+        fill-opacity: 1;
+      }
+    
+    }
+    @keyframes dash7 {
+      0% {
+        stroke-dashoffset: 177.16757202148438;
+        stroke-width: 1;
+        fill-opacity: 0;
+      }
+      20% {
+        fill-opacity: 0;
+      }
+      100% {
+        stroke-dashoffset: 0;
+        stroke-opacity: 0;
+        fill-opacity: 1;
+      }
+    
+    }
