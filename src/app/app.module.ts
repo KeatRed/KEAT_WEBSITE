@@ -15,6 +15,9 @@ import { WorkComponent } from './pages/work/work.component';
 import { ContactComponent } from './pages/contact/contact.component';
 //import { SvgKeatonComponent } from './shared/components/svg-keaton/svg-keaton.component';
 import { SharedModule } from './shared/shared.module'; 
+import { IntersectionObserverDirective } from './directives/intersection-observer.directive';
+
+
 
 @NgModule({
   declarations: [
@@ -25,6 +28,7 @@ import { SharedModule } from './shared/shared.module';
     AboutComponent,
     WorkComponent,
     ContactComponent,
+    IntersectionObserverDirective
     //SvgKeatonComponent,
     //TextDistortionComponent
   ],

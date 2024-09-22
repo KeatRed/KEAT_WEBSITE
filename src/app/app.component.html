@@ -10,7 +10,10 @@
     
     
     <app-header></app-header>
-    <app-svg-keaton></app-svg-keaton>
+    <div  appIntersectionObserver (isIntersecting)="onIntersectionChange($event)">
+      <app-svg-keaton></app-svg-keaton>
+    </div>
+
     <app-about></app-about>
     <app-work></app-work>
     <app-contact></app-contact>

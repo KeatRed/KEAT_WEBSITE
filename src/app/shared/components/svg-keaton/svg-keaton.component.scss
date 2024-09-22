@@ -1,7 +1,32 @@
 .svg-container {
-  height: calc(100vh - 50px);
-  margin-bottom: 50px; 
+  //height: calc(100vh - 50px);
+  //margin-bottom: 50px; 
+  transition: all 0.3s ease;
+  //position: relative;
+  width: 100%;
+  margin-top: -450px;
+  //margin-bottom: -150px;
+  //background-color: #add8e6; 
 }
+
+.svg-container svg{
+  width: 100%;  /* Le SVG occupera 100% de la largeur du conteneur */
+  height: 100%;
+}
+
+.svg-container.minimized {
+  position: fixed;
+  //top: -50px;
+  left: 10px;
+  width: 100%;
+  height: 100%;
+  margin-top: -150px;
+  margin-bottom: 0px;
+  margin-left: -50px;
+  transform: scale(0.25); /* Réduit l'échelle à 25% */
+  transform-origin: top left; /* Transforme à partir du coin supérieur gauche */
+}
+
 
 
 .SVGclipPath {
@@ -29,15 +54,11 @@
     background:red;
     clip-path: url(#shape--start);
   }
-  svg {
-    display: block;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-    }
-    
+  .svg-container svg {
+    width: 100%;
+    height: 100%;
+  }
+  
     .st0 {
       stroke-dasharray: 427.5171203613281;
       stroke-dashoffset: 427.5171203613281;
