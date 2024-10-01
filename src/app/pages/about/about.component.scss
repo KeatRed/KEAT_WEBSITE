@@ -1,3 +1,38 @@
 div#about {
     color: white;
+    margin-top: 23vh;
+      width: 70%; /* La div occupera 70% de la largeur disponible, avec 15% de chaque côté */
+      margin-left: auto;
+      margin-right: auto;
+      text-align: justify; /* Facultatif : justifie le texte à l'intérieur de la div */
+    
+    
 }
+.bitmoji {
+  width: 100px; /* Ajuste la taille de l'image */
+  height: 100px; /* Assure que l'image est carrée */
+  border-radius: 50%; /* Rend l'image circulaire */
+  object-fit: cover; /* Permet de centrer l'image dans le cercle */
+  float: left; /* Positionne l'image à gauche */
+  margin-right: 15px; /* Ajoute un espace entre l'image et le texte */
+}
+
+
+div#subtitle {
+display: flex;
+  justify-content: center; /* Centre les éléments horizontalement */
+  font-size: 5vh;
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  font-style: italic;
+  color: #ffffff; /* Exemple pour texte blanc */
+  letter-spacing: 0.5px; /* Espacement entre les lettres */
+  line-height: 1.5; /* Ajuste l'espacement vertical */
+}
+
+.large-space {
+  height: 10vh; /* Ajustez la hauteur selon la taille de l'espace souhaité */
+}
+  
+  

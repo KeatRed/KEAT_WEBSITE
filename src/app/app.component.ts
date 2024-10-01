@@ -24,13 +24,16 @@ export class AppComponent implements AfterViewInit {
   constructor(private el: ElementRef, private renderer: Renderer2) {}
   onIntersectionChange(isIntersecting: boolean) {
     const svgContainer = this.el.nativeElement.querySelector('.svg-container');
+    const placeholder = this.el.nativeElement.querySelector('.title-placeholder');
     console.log('AppComponent: Intersection change detected:', isIntersecting);
     if (isIntersecting) {
       console.log('SVG is visible, removing minimized class');
       this.renderer.removeClass(svgContainer, 'minimized');
+      placeholder.style.height = '0px';
     } else {
       console.log('SVG is not visible, adding minimized class');
       this.renderer.addClass(svgContainer, 'minimized');
+      placeholder.style.height = '60vh';
     }
     
   }

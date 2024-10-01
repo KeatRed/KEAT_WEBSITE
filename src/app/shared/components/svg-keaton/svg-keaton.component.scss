@@ -2,11 +2,17 @@
   //height: calc(100vh - 50px);
   //margin-bottom: 50px; 
   transition: all 0.3s ease;
+  transition: height 0.3s ease;
   //position: relative;
-  width: 100%;
-  margin-top: -450px;
-  //margin-bottom: -150px;
+  width: 50%;
+  margin-top: -20vh;
+  margin-left: 320px;
+  margin-bottom: -15vh;
   //background-color: #add8e6; 
+}
+
+.title-placeholder {
+  height: 0px; /* Hauteur de la div maximisée */
 }
 
 .svg-container svg{
@@ -17,12 +23,12 @@
 .svg-container.minimized {
   position: fixed;
   //top: -50px;
-  left: 10px;
+  left: 1vw;
   width: 100%;
   height: 100%;
-  margin-top: -150px;
-  margin-bottom: 0px;
-  margin-left: -50px;
+  margin-top: -75vh;
+  //margin-bottom: 0px;
+  margin-left: -5vw;
   transform: scale(0.25); /* Réduit l'échelle à 25% */
   transform-origin: top left; /* Transforme à partir du coin supérieur gauche */
 }
