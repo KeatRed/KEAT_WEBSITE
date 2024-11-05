@@ -1,23 +1,22 @@
-
-
-
-.menu-container{
+.menu-container {
     position: relative;
 }
 
 ul#menu {
     text-align: center;
     padding-top: 2%;
+    margin-top: 0%;
 }
 
-ul#menu li{
-    display:inline;
+ul#menu li {
+    display: inline;
     align-items: center;
     justify-content: center;
-    background-color: rgb(0, 0, 0);
+    //background-color: rgb(0, 0, 0);
 }
+
 li:not(:last-child) {
-    margin-right: 10%;
+    margin-right: 10vw;
 }
 
 .mat-black {
@@ -29,12 +28,40 @@ li:not(:last-child) {
     position: sticky;
     display: block;
     top: 0;
+    margin: 0;
     z-index: 1000; // Assurez-vous que le header est au-dessus des autres éléments
     width: 100%; // Le header doit occuper toute la largeur
-  }
-  
-
-button {
-  color:black;
 }
 
+
+/* Style général pour le bouton */
+.button {
+    display: inline-block;
+    padding: 0.5em 1.5em; /* Padding pour la taille */
+    font-size: 1em; /* Taille de texte adaptative */
+    font-family: 'Montserrat', sans-serif; /* Utilisation de Montserrat */
+    color: #333; /* Couleur du texte */
+    background-color: #e0e0e0; /* Couleur de fond du bouton */
+    border: none; /* Pas de bordure */
+    border-radius: 25px; /* Bords arrondis pour l'effet pill */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    text-align: center;
+    transition: all 0.3s ease; /* Transition pour animations en TS */
+  }
+  
+  /* Responsive pour ajuster la taille sur petits écrans */
+  @media (max-width: 768px) {
+    .button {
+      padding: 0.4em 1.2em;
+      font-size: 0.9em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .button {
+      padding: 0.3em 1em;
+      font-size: 0.8em;
+    }
+  }
+  

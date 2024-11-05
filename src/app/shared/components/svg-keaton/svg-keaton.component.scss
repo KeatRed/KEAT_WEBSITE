@@ -1,238 +1,280 @@
 .svg-container {
-  //height: calc(100vh - 50px);
-  //margin-bottom: 50px; 
-  transition: all 0.3s ease;
-  transition: height 0.3s ease;
-  //position: relative;
-  width: 50%;
-  margin-top: -20vh;
-  margin-left: 320px;
-  margin-bottom: -15vh;
-  //background-color: #add8e6; 
+    //height: calc(100vh - 50px);
+    //margin-bottom: 50px; 
+    transition: all 0.3s ease;
+    transition: height 0.3s ease;
+    //position: relative;
+    width: 100vw;
+    //margin-top: -1000PX;
+    margin-left: 2vw;
+    //margin-bottom: -15vh;
+    //background-color: #add8e6; 
+    //height: 100vh;
 }
+
+@media (min-width: 2750px) {
+    .svg-container {
+        margin-top: -500px;
+        width: 60vw;
+        margin-left: 15vw;
+    }
+  }
+  
 
 .title-placeholder {
-  height: 0px; /* Hauteur de la div maximisée */
+    height: 0vh;
+    /* Hauteur de la div maximisée */
 }
 
-.svg-container svg{
-  width: 100%;  /* Le SVG occupera 100% de la largeur du conteneur */
-  height: 100%;
+.svg-container svg {
+    width: 100%;
+    /* Le SVG occupera 100% de la largeur du conteneur */
+    //height: 10vh;
 }
 
 .svg-container.minimized {
-  position: fixed;
-  //top: -50px;
-  left: 1vw;
-  width: 100%;
-  height: 100%;
-  margin-top: -75vh;
-  //margin-bottom: 0px;
-  margin-left: -5vw;
-  transform: scale(0.25); /* Réduit l'échelle à 25% */
-  transform-origin: top left; /* Transforme à partir du coin supérieur gauche */
+    position: fixed;
+    //top: -5vh;
+    //left: -38vw;
+    width: 30vw;
+    height: 10vh;
+    //margin-top: -10vh;
+    //margin-bottom: 0px;
+    //margin-left: -5vw;
+    transform: scale(0.40);
+    /* Réduit l'échelle à 25% */
+    transform-origin: top left;
+    /* Transforme à partir du coin supérieur gauche */
 }
 
-
-
 .SVGclipPath {
-
     animation: starShine 10s infinite;
-  }
-  @keyframes starShine {
+}
+
+@keyframes starShine {
     100% {
-      opacity: 10%;
+        opacity: 10%;
     }
-    90% {opacity: 20%;}
-    80% {opacity: 30%;}
-    70% {opacity: 60%;}
-    60% {opacity: 80%;}
-    50% {opacity: 100%;}
-    40% {opacity: 80%;}
-    30% {opacity: 60%;}
-    20% {opacity: 30%;}
-    10% {opacity: 20%;}
-    0% {opacity: 0%;}
-  }
-  .box {
-    width:300px;
-    height:200px;
-    background:red;
+    90% {
+        opacity: 20%;
+    }
+    80% {
+        opacity: 30%;
+    }
+    70% {
+        opacity: 60%;
+    }
+    60% {
+        opacity: 80%;
+    }
+    50% {
+        opacity: 100%;
+    }
+    40% {
+        opacity: 80%;
+    }
+    30% {
+        opacity: 60%;
+    }
+    20% {
+        opacity: 30%;
+    }
+    10% {
+        opacity: 20%;
+    }
+    0% {
+        opacity: 0%;
+    }
+}
+
+.box {
+    width: 300px;
+    height: 200px;
+    background: red;
     clip-path: url(#shape--start);
-  }
-  .svg-container svg {
+}
+
+.svg-container svg {
     width: 100%;
-    height: 100%;
-  }
-  
-    .st0 {
-      stroke-dasharray: 427.5171203613281;
-      stroke-dashoffset: 427.5171203613281;
-      animation: dash0 5s linear alternate infinite;
-    }
-    .st1 {
-      stroke-dasharray: 640.036376953125;
-      stroke-dashoffset: 640.036376953125;
-      animation: dash1 5s linear alternate infinite;
-    }
-    .st2 {
-      stroke-dasharray: 90.12757202148438;
-      stroke-dashoffset: 90.12757202148438;
-      animation: dash2 5s linear alternate infinite;
-    }
-    .st3 {
-      stroke-dasharray: 60.10757202148438;
-      stroke-dashoffset: 60.10757202148438;
-      animation: dash3 5s linear alternate infinite;
-    }
-    .st4 {
-      stroke-dasharray: 200.16757202148438;
-      stroke-dashoffset: 100.16757202148438;
-      animation: dash4 5s linear alternate infinite;
-    }
-    .st5 {
-      stroke-dasharray: 100.036376953125;
-      stroke-dashoffset: 100.036376953125;
-      animation: dash5 5s linear alternate infinite;
-    }
-    .st6 {
-      stroke-dasharray: 45.45;
-      stroke-dashoffset: 45.45 ;
-      animation: dash6 5s linear alternate infinite;
-    }
-    .st7 {
-      stroke-dasharray: 177.16757202148438;
-      stroke-dashoffset: 177.16757202148438;
-      animation: dash7 5s linear alternate infinite;
-    }
-    path {
-      fill: white;
-    }
-    
-    
-    @keyframes dash0 {
-      0% {
+    //height: 100%;
+}
+
+.st0 {
+    stroke-dasharray: 427.5171203613281;
+    stroke-dashoffset: 427.5171203613281;
+    animation: dash0 5s linear alternate infinite;
+}
+
+.st1 {
+    stroke-dasharray: 640.036376953125;
+    stroke-dashoffset: 640.036376953125;
+    animation: dash1 5s linear alternate infinite;
+}
+
+.st2 {
+    stroke-dasharray: 90.12757202148438;
+    stroke-dashoffset: 90.12757202148438;
+    animation: dash2 5s linear alternate infinite;
+}
+
+.st3 {
+    stroke-dasharray: 60.10757202148438;
+    stroke-dashoffset: 60.10757202148438;
+    animation: dash3 5s linear alternate infinite;
+}
+
+.st4 {
+    stroke-dasharray: 200.16757202148438;
+    stroke-dashoffset: 100.16757202148438;
+    animation: dash4 5s linear alternate infinite;
+}
+
+.st5 {
+    stroke-dasharray: 100.036376953125;
+    stroke-dashoffset: 100.036376953125;
+    animation: dash5 5s linear alternate infinite;
+}
+
+.st6 {
+    stroke-dasharray: 45.45;
+    stroke-dashoffset: 45.45;
+    animation: dash6 5s linear alternate infinite;
+}
+
+.st7 {
+    stroke-dasharray: 177.16757202148438;
+    stroke-dashoffset: 177.16757202148438;
+    animation: dash7 5s linear alternate infinite;
+}
+
+path {
+    fill: white;
+}
+
+@keyframes dash0 {
+    0% {
         stroke-dashoffset: 427.5171203613281;
         stroke-width: 1;
         fill-opacity: 0;
-      }
-      20% {
+    }
+    20% {
         fill-opacity: 0;
-      }
-      100% {
+    }
+    100% {
         stroke-dashoffset: 0;
         stroke-opacity: 1;
         fill-opacity: 1;
-      }
     }
-    @keyframes dash1 {
-      0% {
+}
+
+@keyframes dash1 {
+    0% {
         stroke-dashoffset: 640.036376953125;
         stroke-width: 1;
         fill-opacity: 0;
-      }
-      20% {
+    }
+    20% {
         fill-opacity: 0;
-      }
-      100% {
+    }
+    100% {
         stroke-dashoffset: 0;
         stroke-opacity: 0;
         fill-opacity: 1;
-      }
     }
-    @keyframes dash2 {
-      0% {
+}
+
+@keyframes dash2 {
+    0% {
         stroke-dashoffset: 177.16757202148438;
         stroke-width: 1;
         fill-opacity: 0;
-      }
-      20% {
+    }
+    20% {
         fill-opacity: 0;
-      }
-      100% {
+    }
+    100% {
         stroke-dashoffset: 0;
         stroke-opacity: 0;
         fill-opacity: 1;
-      }
-    
     }
-    @keyframes dash3 {
-      0% {
+}
+
+@keyframes dash3 {
+    0% {
         stroke-dashoffset: 177.16757202148438;
         stroke-width: 1;
         fill-opacity: 0;
-      }
-      20% {
+    }
+    20% {
         fill-opacity: 0;
-      }
-      100% {
+    }
+    100% {
         stroke-dashoffset: 0;
         stroke-opacity: 0;
         fill-opacity: 1;
-      }
-    
     }
-    @keyframes dash4 {
-      0% {
+}
+
+@keyframes dash4 {
+    0% {
         stroke-dashoffset: 177.16757202148438;
         stroke-width: 1;
         fill-opacity: 0;
-      }
-      20% {
+    }
+    20% {
         fill-opacity: 0;
-      }
-      100% {
+    }
+    100% {
         stroke-dashoffset: 0;
         stroke-opacity: 0;
         fill-opacity: 1;
-      }
-    
     }
-    @keyframes dash5 {
-      0% {
+}
+
+@keyframes dash5 {
+    0% {
         stroke-dashoffset: 100.16757202148438;
         stroke-width: 1;
         fill-opacity: 0;
-      }
-      20% {
+    }
+    20% {
         fill-opacity: 0;
-      }
-      100% {
+    }
+    100% {
         stroke-dashoffset: 0;
         stroke-opacity: 0;
         fill-opacity: 1;
-      }
-    
     }
-    @keyframes dash6 {
-      0% {
+}
+
+@keyframes dash6 {
+    0% {
         stroke-dashoffset: 45.45;
         stroke-width: 1;
         fill-opacity: 0;
-      }
-      20% {
+    }
+    20% {
         fill-opacity: 0;
-      }
-      100% {
+    }
+    100% {
         stroke-dashoffset: 0;
         stroke-opacity: 0;
         fill-opacity: 1;
-      }
-    
     }
-    @keyframes dash7 {
-      0% {
+}
+
+@keyframes dash7 {
+    0% {
         stroke-dashoffset: 177.16757202148438;
         stroke-width: 1;
         fill-opacity: 0;
-      }
-      20% {
+    }
+    20% {
         fill-opacity: 0;
-      }
-      100% {
+    }
+    100% {
         stroke-dashoffset: 0;
         stroke-opacity: 0;
         fill-opacity: 1;
-      }
-    
     }
+}

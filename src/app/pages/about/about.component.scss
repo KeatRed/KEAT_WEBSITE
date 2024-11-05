@@ -1,38 +1,233 @@
+
+
+
+
+
 div#about {
+  user-select: none; 
     color: white;
-    margin-top: 23vh;
-      width: 70%; /* La div occupera 70% de la largeur disponible, avec 15% de chaque côté */
-      margin-left: auto;
-      margin-right: auto;
-      text-align: justify; /* Facultatif : justifie le texte à l'intérieur de la div */
-    
-    
-}
-.bitmoji {
-  width: 100px; /* Ajuste la taille de l'image */
-  height: 100px; /* Assure que l'image est carrée */
-  border-radius: 50%; /* Rend l'image circulaire */
-  object-fit: cover; /* Permet de centrer l'image dans le cercle */
-  float: left; /* Positionne l'image à gauche */
-  margin-right: 15px; /* Ajoute un espace entre l'image et le texte */
+    //margin-top: 23vh;
+    //width: 70%;
+    /* La div occupera 70% de la largeur disponible, avec 15% de chaque côté */
+    margin-left: 10vw;
+    margin-right: 10vw;
+    text-align: justify;
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    /* Facultatif : justifie le texte à l'intérieur de la div */
+    font-family: 'Montserrat', sans-serif;
 }
 
+.bitmoji {
+    width: 100px;
+    /* Ajuste la taille de l'image */
+    height: 100px;
+    /* Assure que l'image est carrée */
+    border-radius: 50%;
+    /* Rend l'image circulaire */
+    object-fit: cover;
+    /* Permet de centrer l'image dans le cercle */
+    float: left;
+    /* Positionne l'image à gauche */
+    margin-right: 15px;
+    /* Ajoute un espace entre l'image et le texte */
+}
 
 div#subtitle {
-display: flex;
-  justify-content: center; /* Centre les éléments horizontalement */
-  font-size: 5vh;
-  color: white;
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
-  font-style: italic;
-  color: #ffffff; /* Exemple pour texte blanc */
-  letter-spacing: 0.5px; /* Espacement entre les lettres */
-  line-height: 1.5; /* Ajuste l'espacement vertical */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+    padding-top: 5vh;
+    padding-bottom: 10vh;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    /* ExtraLight / Thin */
+    font-style: italic;
+    /* Italic style */
+    /* ExtraLight */
+    /* Italic style */
+    font-size: clamp(2vh, 5vw, 20vh);
+    /* Taille de police responsive */
+    line-height: 1.2;
+    /* Ajuste l'interligne */
+    text-align: center;
+    /* Centrer le sous-titre */
+    margin: 0 auto;
+    /* Centrer horizontalement avec margin */
+    padding-left: 10vh;
+    padding-right: 10vh;
+    max-width: calc(100vw - 20vh);
+    /* Limiter les bordures à 10vh de chaque côté */
+    pointer-events: none;
+    /* Empêche les clics */
+    user-select: none;
+    /* Empêche la sélection du texte */
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+div#subtitle.visible {
+    opacity: 1;
 }
 
 .large-space {
-  height: 10vh; /* Ajustez la hauteur selon la taille de l'espace souhaité */
+    height: 0vh;
+    /* Ajustez la hauteur selon la taille de l'espace souhaité */
 }
-  
-  
+.welcome-message {
+    color: #E0E0E0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    max-width: 70vw;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: clamp(1rem, 4vw, 2rem); /* Taille de la police augmentée */
+    line-height: 1.6; /* Espacement entre les lignes augmenté */
+    text-align: center;
+    margin: 0 auto;
+    padding: 3vh 10vw;
+    max-width: 80vw;
+    margin-bottom: 0vh;
+  }
+  .welcome-message2 {
+    color: #E0E0E0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    transition: opacity 2s ease-in-out, transform 2s ease-in-out;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    transform: translateY(20px);
+    max-width: 70vw;
+    font-size: clamp(1rem, 4vw, 2rem);
+    line-height: 1.6; /* Espacement entre les lignes augmenté */
+    text-align: center;
+    padding: 0vh 10vw;
+    
+  }
+
+  .welcome-message.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .table-container {
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr)); /* Adapte les colonnes au viewport */
+    //gap: 2vw; /* Espace entre les cellules en unité responsive */
+    color: white;
+    margin: 5vh auto; /* Marges verticales responsive */
+    width: 60vw; /* Largeur de la table en fonction du viewport */
+    max-width: 90vw; /* Largeur maximale pour grands écrans */
+    border: 0.2vw solid white; /* Bordure en fonction du viewport */
+    color: white;
+    border-radius: 1rem;
+    font-size: 1em;
+    //max-width: 20vw;
+
+  }
+  /* Style des cellules */
+  .table-header, .table-cell {
+    //border: 1px solid white; /* Bordure des cellules */
+    position: relative; /* Confinement des éléments flottants */
+    height: auto; /* Hauteur auto pour s'adapter au contenu */
+    overflow: hidden; /* Empêche les mots de sortir de la cellule */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2vw; /* Padding responsive */
+    font-size: calc(1rem + 0.5vw); /* Taille de police responsive */
+
+  }
+
+  .table-header{
+    border-bottom: 0.1vw solid white;
+    //max-width: 20vw;
+    font-size: calc(0.6rem + 0.5vw); /* Taille de police responsive */
+    font-weight: bold;
+  }
+  .table-header:nth-child(1){
+    border-right: 0.1vw solid white;
+  }
+
+  .table-cell {
+    height: 30vh; 
+    //width: 10vw;
+    font-size: 0.7rem;
+   
+  }
+  .table-cell:last-child{
+    border-left: 0.1vw solid white;
+  }
+
+  .floating-word {
+    
+    position: absolute;
+    transition: 0.1s;
+    word-break: unset !important;
+    overflow-wrap: unset;
+    color: white; /* Couleur de départ */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+  }
+
+  /* Animation glow */
+@keyframes colorChange {
+    0% {
+      color: white;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+    100% {
+      color: rgb(9, 10, 15);
+      text-shadow: none;
+    }
+  }
+/* Style pour chaque mot flottant */
+#floating-words {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-weight: lighter;
+}
+
+/* Style pour chaque mot flottant */
+.floating-word {
+    font-weight: lighter;
+    position: absolute;
+    transition: 0.1s;
+    animation: float 15s infinite, colorChange 5s infinite;
+    color: white; /* Couleur de départ */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+}
+//background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+/* Animation de changement de couleur et glow */
+@keyframes colorChange {
+    0%, 100% {
+        color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.6), 0 0 20px rgba(255, 255, 255, 0.4), 0 0 30px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        color: #1B2735;
+        text-shadow: none;
+    }
+}
+
+/* Animation de flottement aléatoire */
+@keyframes float {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(10px, -20px); }
+    50% { transform: translate(-10px, 10px); }
+    75% { transform: translate(20px, -10px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Distribution des mots dans des positions différentes et avec des délais d'animation */
+.floating-word:nth-child(1) { left: 10%; top: 10%; font-size: calc(1em + 0.5vw); animation-delay: 0s; }
+.floating-word:nth-child(2) { left: 60%; top: 20%; font-size: calc(1.2em + 0.5vw); animation-delay: 1s; }
+.floating-word:nth-child(3) { left: 30%; top: 70%; font-size: calc(1.3em + 0.5vw); animation-delay: 2s; }
+.floating-word:nth-child(4) { left: 70%; top: 50%; font-size: calc(1em + 0.3vw); animation-delay: 3s; }
+.floating-word:nth-child(5) { left: 40%; top: 30%; font-size: calc(1.2em + 0.4vw); animation-delay: 4s; }
+.floating-word:nth-child(6) { left: 20%; top: 80%; font-size: calc(1.1em + 0.5vw); animation-delay: 5s; }
+/* Ajoutez d'autres mots si nécessaire, en augmentant progressivement animation-delay */

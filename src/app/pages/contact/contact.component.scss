@@ -1,3 +1,64 @@
 div#contact {
     color: white;
+    //padding-top: 10vh;
 }
+
+.me {
+    display: block;
+    margin: 2em auto;
+    margin-bottom: 3em;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+  }
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem; // Espace entre les icônes
+    padding: 2rem 0;
+  
+    .icon {
+      font-size: 2.5rem; // Taille de l'icône
+      transition: transform 0.3s ease-in-out;
+      color: #ffffff;
+  
+      // Utilisation de la pseudo-classe :before pour créer un effet de background limité
+      position: relative;
+      
+      &:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        //width: -20%;
+        //height: -20%;
+        opacity: 20%;
+        background-color: currentColor; // Couleur de fond identique à l'icône
+        //border-radius: 50%; // Pour un effet de cercle
+        transform: translate(-50%, -50%);
+        transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+        
+      }
+  
+      &:hover:before {
+        width: 90%; // Passe à 100 % de la taille de l'icône lors du survol
+        height: 70%;
+      }
+  
+      &:hover {
+        transform: scale(1.2); // Zoom de l'icône lors du survol
+      }
+  
+      &.linkedin:hover {
+        color: linear-gradient(to bottom left, #647DEE 40%, #7F53AC 100%);
+       
+      }
+  
+      &.mail:hover {
+        color: linear-gradient(to bottom left, #647DEE 40%, #7F53AC 100%);
+      }
+    }
+  }
+  
