@@ -31,7 +31,7 @@ body {
     display: block;
     width: 100%;
     cursor: pointer;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid #ffffff;
     background: transparent;
     transition: background-color 0.3s ease-in-out;
     margin-top: auto; /* Pushes the button to the bottom */
@@ -77,7 +77,7 @@ body {
   }
   
   .card {
-    background-color: white;
+    //background-color: white;
     border-radius: 0.25rem;
     box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
     display: flex;
@@ -91,14 +91,25 @@ body {
   }
   
   .card_content {
+    
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     padding: 1rem;
-    background: linear-gradient(to bottom left, #647DEE 40%, #7F53AC 100%);
+    //background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.6) 0%,
+      rgba(132, 206, 235, 0.25) 25%,
+      rgba(90, 185, 234, 0.3) 50%,
+      rgba(193, 200, 228, 0.2) 75%,
+      rgba(136, 96, 208, 0.3) 100%
+    );
+    //background: linear-gradient(to bottom left, #647DEE 40%, #7F53AC 100%);
     justify-content: flex-start;
         /* Empêche les clics */
         user-select: none;
+        
 }
   
   .card_title {
@@ -116,7 +127,8 @@ body {
     line-height: 1.5;
     margin-bottom: 1.25rem;
     font-weight: 400;
-    
+    font-family: 'Montserrat', sans-serif;
+    //font-weight: 100;
   }
 body.modal-open {
   overflow: hidden; /* Disable scrolling on the main page */
@@ -157,34 +169,465 @@ body.modal-open {
     object-fit: cover; /* This ensures the image covers the entire container */
   }
 
+  .project_title{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-align: center;
+    color: #333;
+  }
+
+  .one,.two,.three {
+    font-family: 'Montserrat', sans-serif;
+    font-size:clamp(0.2rem, 4vw, 0.6rem);
+    font-weight: 400;
+    line-height: 1.6;
+    font-style: italic;
+    color: black; /* Optionnel : couleur légèrement plus douce pour une meilleure lisibilité */
+    margin-bottom: 1em; /* Espace entre les paragraphes */
+  }
+  
+.wrapper {
+  //border: 1px solid #1b8800;
+  border-radius: 0.5rem;
+  //background-color: #fff4e6;
+  width: 50%; /* Une largeur doit être définie */
+  margin: 0 auto;
+  flex-direction: column; /* Empile les enfants verticalement */
+}
+
+.wrapper > div {
+  border: 0.1rem solid #232433;
+  flex: 1;
+  //text-align: center; /* Centre le texte */
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: #ffffff;
+  padding: 1em;
+  color: black;
+
+}
+
+.wrapper {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+
+.wrapper > div {
+max-width: 100%;
+  color: #000000;
+  //background-color: rgba(27, 39, 53, 1);
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.2rem, 4vw, 0.7rem);
+  font-weight: 400;
+  line-height: 1.6;
+  font-style: normal;;
+  margin-bottom: 1rem;
+  animation: gradientOpacity 4s infinite linear;
+  background-size: 400% 400%; /* Amplifie encore le mouvement */
+
+}
+@keyframes gradientOpacity {
+  0% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.3) 0%,
+      rgba(132, 206, 235, 0.25) 25%,
+      rgba(90, 185, 234, 0.3) 50%,
+      rgba(193, 200, 228, 0.2) 75%,
+      rgba(136, 96, 208, 0.3) 100%,
+    );
+    background-position: 0% 0%;
+  }
+  2.5% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.29) 5%,
+      rgba(132, 206, 235, 0.27) 30%,
+      rgba(90, 185, 234, 0.28) 55%,
+      rgba(193, 200, 228, 0.22) 80%,
+      rgba(136, 96, 208, 0.28) 100%
+    );
+    background-position: 5% 5%;
+  }
+  5% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.28) 10%,
+      rgba(132, 206, 235, 0.28) 35%,
+      rgba(90, 185, 234, 0.27) 60%,
+      rgba(193, 200, 228, 0.23) 85%,
+      rgba(136, 96, 208, 0.27) 100%
+    );
+    background-position: 10% 10%;
+  }
+  7.5% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.27) 15%,
+      rgba(132, 206, 235, 0.29) 40%,
+      rgba(90, 185, 234, 0.26) 65%,
+      rgba(193, 200, 228, 0.24) 90%,
+      rgba(136, 96, 208, 0.26) 100%
+    );
+    background-position: 15% 15%;
+  }
+  10% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.26) 20%,
+      rgba(132, 206, 235, 0.3) 45%,
+      rgba(90, 185, 234, 0.25) 70%,
+      rgba(193, 200, 228, 0.25) 95%,
+      rgba(136, 96, 208, 0.25) 100%
+    );
+    background-position: 20% 20%;
+  }
+  12.5% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.27) 25%,
+      rgba(132, 206, 235, 0.29) 50%,
+      rgba(90, 185, 234, 0.26) 75%,
+      rgba(193, 200, 228, 0.26) 100%,
+      rgba(136, 96, 208, 0.27) 100%
+    );
+    background-position: 25% 25%;
+  }
+  15% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.3) 30%,
+      rgba(132, 206, 235, 0.25) 55%,
+      rgba(90, 185, 234, 0.3) 80%,
+      rgba(193, 200, 228, 0.27) 100%,
+      rgba(136, 96, 208, 0.3) 100%
+    );
+    background-position: 30% 30%;
+  }
+  20% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.29) 35%,
+      rgba(132, 206, 235, 0.26) 60%,
+      rgba(90, 185, 234, 0.28) 85%,
+      rgba(193, 200, 228, 0.25) 100%,
+      rgba(136, 96, 208, 0.29) 100%
+    );
+    background-position: 35% 35%;
+  }
+  25% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.3) 30%,
+      rgba(132, 206, 235, 0.25) 55%,
+      rgba(90, 185, 234, 0.3) 80%,
+      rgba(193, 200, 228, 0.27) 100%,
+      rgba(136, 96, 208, 0.29) 100%
+    );
+    background-position: 30% 30%;
+  }
+
+  75% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.3) 30%,
+      rgba(132, 206, 235, 0.25) 55%,
+      rgba(90, 185, 234, 0.3) 80%,
+      rgba(193, 200, 228, 0.27) 100%,
+      rgba(136, 96, 208, 0.29) 100%
+    );
+    background-position: 30% 30%;
+  }
+  80% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.29) 35%,
+      rgba(132, 206, 235, 0.26) 60%,
+      rgba(90, 185, 234, 0.28) 85%,
+      rgba(193, 200, 228, 0.25) 100%,
+      rgba(136, 96, 208, 0.29) 100%
+    );
+    background-position: 35% 35%;
+  }
+  85% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.3) 30%,
+      rgba(132, 206, 235, 0.25) 55%,
+      rgba(90, 185, 234, 0.3) 80%,
+      rgba(193, 200, 228, 0.27) 100%,
+      rgba(136, 96, 208, 0.29) 100%
+    );
+    background-position: 30% 30%;
+  }
+  82.5% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.27) 25%,
+      rgba(132, 206, 235, 0.29) 50%,
+      rgba(90, 185, 234, 0.26) 75%,
+      rgba(193, 200, 228, 0.26) 100%,
+      rgba(136, 96, 208, 0.27) 100%
+    );
+    background-position: 25% 25%;
+  }
+  85% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.26) 20%,
+      rgba(132, 206, 235, 0.3) 45%,
+      rgba(90, 185, 234, 0.25) 70%,
+      rgba(193, 200, 228, 0.25) 95%,
+      rgba(136, 96, 208, 0.25) 100%
+    );
+    background-position: 20% 20%;
+  }
+  87.5% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.27) 15%,
+      rgba(132, 206, 235, 0.29) 40%,
+      rgba(90, 185, 234, 0.26) 65%,
+      rgba(193, 200, 228, 0.24) 90%,
+      rgba(136, 96, 208, 0.26) 100%
+    );
+    background-position: 15% 15%;
+  }
+  90% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.28) 10%,
+      rgba(132, 206, 235, 0.28) 35%,
+      rgba(90, 185, 234, 0.27) 60%,
+      rgba(193, 200, 228, 0.23) 85%,
+      rgba(136, 96, 208, 0.27) 100%
+    );
+    background-position: 10% 10%;
+  }
+  92.5% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.29) 5%,
+      rgba(132, 206, 235, 0.27) 30%,
+      rgba(90, 185, 234, 0.28) 55%,
+      rgba(193, 200, 228, 0.22) 80%,
+      rgba(136, 96, 208, 0.28) 100%
+    );
+    background-position: 5% 5%;
+  }
+  100% {
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.3) 0%,
+      rgba(132, 206, 235, 0.25) 25%,
+      rgba(90, 185, 234, 0.3) 50%,
+      rgba(193, 200, 228, 0.2) 75%,
+      rgba(136, 96, 208, 0.3) 100%
+    );
+    background-position: 0% 0%;
+  }
+}
+
+
+
+
+
+
+
+
+
+.wrapper ul, .wrapper ol  {
+  max-width: 100%;
+  display: flex; /* Active Flexbox */
+  flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+  justify-content: flex-start; /* Aligne les éléments à gauche (modifiable) */
+  //background-color: #1125ff;
+  padding: 0;
+  padding-left: 1rem; /* Ajuste légèrement l'espacement global */
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  font-weight: bold;
+  //perspective: 800px; /* Perspective appliquée au parent */
+  animation: fadeInUp 3s ease-in-out forwards; /* Animation */
+}
+.wrapper ul:nth-child(1) {
+  animation-delay: 0.1s; /* Décalage pour chaque UL */
+}
+.wrapper ul:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.wrapper ul:nth-child(3) {
+  animation-delay: 0.4s;
+}
+.wrapper ul:nth-child(4) {
+  animation-delay: 0.5s;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.wrapper ul ul{
+  display: flex; /* Utilise Flexbox pour aligner horizontalement */
+  align-items: center; /* Centre verticalement le titre et les items */
+  width: fit-content; /* Ajuste strictement la largeur au texte */
+
+  background: linear-gradient(
+    135deg,
+    rgba(86, 128, 233, 0.6) 0%,
+    rgba(132, 206, 235, 0.25) 25%,
+    rgba(90, 185, 234, 0.3) 50%,
+    rgba(193, 200, 228, 0.2) 75%,
+    rgba(136, 96, 208, 0.3) 100%
+  );
+  background-position: 0% 0%;
+  //border: 0.08rem solid #1e2036;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  margin-right: 1rem;
+  //margin-right: 0.5rem;
+  padding: 0.5rem;
+  transform: translateZ(20px); /* Décalage en profondeur */
+  box-shadow: 0 0.3rem 0.5rem 0px rgba(0, 0, 0, 0.6);
+}
+
+
+.list_title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.5rem, 4vw, 0.6rem);
+  font-style: italic;
+  font-weight: 600;
+  color: #000; /* Couleur du texte */
+  margin-right: 1rem;
+}
+
+.wrapper li {
+  max-width: 100%;
+
+  display: block; /* Les éléments restent empilés verticalement */
+  width: fit-content; /* Ajuste strictement la largeur au contenu */
+  background-color: #fff;
+  border: 0.08rem solid #1e2036;
+  border-radius: 0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(0.2rem, 4vw, 0.6rem);
+  font-weight: 400;
+  line-height: 1.6;
+  font-style:  normal;
+  white-space: normal; /* Permet les retours à la ligne */
+  word-wrap: normal; /* N'autorise pas les coupures de mots */
+  word-break: normal; /* Empêche les coupures de mots */
+  text-align: center;
+  animation: floatAnimation 4s infinite ease-in-out; /* Animation 3D continue */
+}
+
+/* Animation keyframes */
+@keyframes floatAnimation {
+  0% {
+    box-shadow: 0 0.5rem 1.5rem 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 1rem 1.5rem 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-0.3rem);
+  }
+  100% {
+    box-shadow: 0 0.5rem 1.5rem 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+.intro{
+  font-style: italic;
+}
 
   .description{
-    color: black;
+    //color: black;
+    opacity: 0;
     text-align:center;
-  //font-weight:300;
-  font-family: 'Montserrat', sans-serif;
-  font-size:clamp(0.2rem, 4vw, 0.6rem);
-  //padding-top:10vh;
-  //height:10vh;
-  text-transform: uppercase;
-  overflow:hidden;
-  -webkit-perspective: 10000;
-  -webkit-transform: translate3d(0,0,0);
-  -webkit-font-smoothing: antialiased!important;
+    //font-weight:300;
+    //font-weight: 100;
+    //font-size:clamp(0.2rem, 4vw, 0.6rem);
+    //padding-top:10vh;
+    //height:10vh;
+    //text-transform: uppercase;
+    overflow:hidden;
+    -webkit-perspective: 10000;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-font-smoothing: antialiased!important;
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     -ms-backface-visibility: hidden;
     -moz-osx-font-smoothing: grayscale;
   }
   .description p {
-    display:block;
-    white-space:nowrap;
+    display: block;
+    white-space: normal; /* Permet le retour à la ligne */
     margin-bottom: .25em;
     margin-top: 0;
     user-select: none; 
-  }
+}
+
+.mission-paragraph{
+  padding-top: 3vh;
+}
+
+.fade-in-paragraph-title {
+  font-family: 'Montserrat', sans-serif;
+  
+  //text-transform: uppercase;
+  font-size:clamp(0.2rem,  0.8rem, 0.7rem);
+  //font-weight: 300;
+  font-weight: 600;
+  //font-style: italic;
+  text-transform: uppercase;
+  opacity: 1;
+  transition: opacity 2s ease-in-out;
+  //font-size: 1rem; /* Ajustez cette taille selon vos besoins */
+  line-height: 1.6; /* Améliore la lisibilité en augmentant l'espacement des lignes */
+  //text-transform: none; /* Supprime la transformation en majuscules */
+  color: #333; /* Optionnel : couleur légèrement plus douce pour une meilleure lisibilité */
+  margin-bottom: 1em; /* Espace entre les paragraphes */
+
+}
+  .fade-in-paragraph {
+    font-family: 'Montserrat', sans-serif;
+    //text-transform: uppercase;
+    font-size:clamp(0.2rem, 0.7rem, 0.7rem);
+    font-weight: 400;
+    font-style: normal;
+    
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+    //font-size: 1rem; /* Ajustez cette taille selon vos besoins */
+    line-height: 1.6; /* Améliore la lisibilité en augmentant l'espacement des lignes */
+    text-transform: none; /* Supprime la transformation en majuscules */
+    color: #000000; /* Optionnel : couleur légèrement plus douce pour une meilleure lisibilité */
+    margin-bottom: 1em; /* Espace entre les paragraphes */
+}
+.fade-in-paragraph a{
+  color: #7F53AC; 
+}
+
   .description span {
-    opacity: 0.6;
+    opacity: 0.7;
   }
   
   
@@ -206,6 +649,8 @@ body.modal-open {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25); /* Shadow for the modal */
     position: relative; 
     clip-path: inset(0 round 20px);
+
+    
     
   }
   /* Adjust scrollbar style */
@@ -214,7 +659,15 @@ body.modal-open {
 }
 
 .modal__container::-webkit-scrollbar-thumb {
-  background-color: #7F53AC; 
+  background: linear-gradient(
+    135deg,
+    rgba(86, 128, 233, 0.6) 0%,
+    rgba(132, 206, 235, 0.25) 25%,
+    rgba(90, 185, 234, 0.3) 50%,
+    rgba(193, 200, 228, 0.2) 75%,
+    rgba(136, 96, 208, 0.3) 100%
+  );
+  //background-color: #7F53AC; 
   border-radius: 4px;
 }
 
@@ -222,22 +675,34 @@ body.modal-open {
   background: #f1f1f1;
 }
   .modal__btn {
-    color: #ffffff;
-    position: sticky; /* This keeps it visible within the modal */
+    color: #000000;
+    //position: sticky; /* This keeps it visible within the modal */
+    font-family: 'Montserrat', sans-serif;
+    //text-transform: uppercase;
+    font-size:clamp(0.2rem, 0.7rem, 0.7rem);
+
     padding: 0.8rem 1.5rem;
     font-size: 0.5rem;
     text-transform: uppercase;
-    font-weight: bold;
+    
     border-radius: 0.5rem;
-    font-weight: 400;
+    font-weight: 600;
     cursor: pointer;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    background: linear-gradient(to bottom left, #647DEE 40%, #7F53AC 100%);
+    //background: linear-gradient(to bottom left, #647DEE 40%, #7F53AC 100%);
+    background: linear-gradient(
+      135deg,
+      rgba(86, 128, 233, 0.6) 0%,
+      rgba(132, 206, 235, 0.25) 25%,
+      rgba(90, 185, 234, 0.3) 50%,
+      rgba(193, 200, 228, 0.2) 75%,
+      rgba(136, 96, 208, 0.3) 100%
+    );
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
     //display: inline-block;
-    margin-top: 1.5rem;
-    bottom: 20px;
-    right: 20px; /* Position it to the right */
+    margin-top: 2rem;
+    bottom: 2vh;
+    right: 2vw; /* Position it to the right */
     float: right; /* Align it to the right of the container */
   }
   
@@ -247,6 +712,9 @@ body.modal-open {
     transform: scale(1.05); /* Slight zoom effect on hover */
   }
 
+
+
+
   * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -255,7 +723,7 @@ body.modal-open {
     padding: 0;
     margin: 0;
     list-style: none;
-    font-family: 'Gudea', sans-serif;
+    //font-family: 'Gudea', sans-serif;
     font-weight: normal
   }
   h1 {
@@ -292,7 +760,8 @@ body.modal-open {
   .slider ul {
     position: relative;
     overflow: hidden;
-    border-radius: 15px
+    border-radius: 15px;
+    border: 0.1rem solid #232433;
   }
   .slider ul li {
     position: absolute;
@@ -301,23 +770,49 @@ body.modal-open {
     background-size: cover; /* semon #f98686 */
     background-position: center;
     color: #fff;
-    font-family: serif;
+    //font-family: serif;
   }
-  .slider ul li:first-of-type {
+  #modal-1 .slider ul li:first-of-type {
     background-image: url("/assets/CaptureSERMS.PNG")
   }
-  .slider ul li:nth-of-type(2) {
+  #modal-1 .slider ul li:nth-of-type(2) {
     background-image: url("/assets/CaptureSIPIHM.PNG")
   }
-  .slider ul li:nth-of-type(3) {
+  #modal-1 .slider ul li:nth-of-type(3) {
     background-image: url("/assets/CaptureSIPIHM2.PNG")
   }
-  .slider ul li:nth-of-type(4) {
+  #modal-1 .slider ul li:nth-of-type(4) {
     background-image: url("/assets/ippak.PNG")
   }
-  .slider ul li:last-of-type {
+  #modal-1 .slider ul li:last-of-type {
     background-image: url("/assets/ippak2.PNG")
   }
+
+  #modal-2 .slider ul li:first-of-type {
+    background-image: url("/assets/synoptique3.png")
+  }
+  #modal-2 .slider ul li:nth-of-type(2) {
+    background-image: url("/assets/synoptique.png")
+  }
+  #modal-2 .slider ul li:nth-of-type(3) {
+    background-image: url("/assets/synoptique4.png")
+  }
+  #modal-2 .slider ul li:last-of-type {
+    background-image: url("/assets/CapturePVEA.PNG")
+  }
+
+  #modal-3 .slider ul li:first-of-type {
+    background-image: url("/assets/sdex.png")
+  }
+  #modal-3 .slider ul li:nth-of-type(2) {
+    background-image: url("/assets/sdex2.png")
+  }
+  #modal-3 .slider ul li:last-of-type {
+    background-image: url("/assets/icissues.JPG")
+  }
+  
+
+
   .slider .controll {
     width: 40px;
     height: 40px;
@@ -339,7 +834,7 @@ body.modal-open {
     right: 20px
   }
   .slider .controll:hover, .slider .controll.active {
-    border-color: #7F53AC; /* rose */
+    //border-color: #7F53AC; /* rose */
   }
   .slider ol {
     text-align: center;
@@ -351,7 +846,15 @@ body.modal-open {
   }
   /* Style pour le point actif */
 .slider ol li.active .fa {
-  color: #7F53AC; /* Couleur spécifique pour le point actif */
+  color: linear-gradient(
+    135deg,
+    rgba(86, 128, 233, 0.6) 0%,
+    rgba(132, 206, 235, 0.25) 25%,
+    rgba(90, 185, 234, 0.3) 50%,
+    rgba(193, 200, 228, 0.2) 75%,
+    rgba(136, 96, 208, 0.3) 100%
+  );
+  color: rgba(136, 96, 208, 0.7); /* Couleur spécifique pour le point actif */
   font-size: 22px; /* Taille agrandie pour le point actif */
 }
   .slider ol .fa {

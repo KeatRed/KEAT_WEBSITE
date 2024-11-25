@@ -31,16 +31,66 @@ export class AppComponent implements AfterViewInit {
     this.mobileScreenQuery = window.matchMedia('(max-width: 768px)');
   }
   calculateAngle(): number {
-    const minWidth = 1200;
-    const maxWidth = 2500;
-    const minAngle = 45;
-    const maxAngle = 65;
-
+    const minAngle = 50;   // Angle minimum
+    const maxAngle = 65;   // Angle maximum
+    
     const screenWidth = window.innerWidth;
-
-    // Calcul de l'angle en fonction de la largeur de l'écran
-    return minAngle + (screenWidth - minWidth) * (maxAngle - minAngle) / (maxWidth - minWidth);
+    const screenHeight = window.innerHeight;
+  
+    // Calcul du ratio d'aspect (largeur / hauteur) de l'écran
+    const aspectRatio = screenWidth / screenHeight;
+    let angle;
+  
+    // Utilisation de différentes valeurs d'angle en fonction de catégories de ratio d'aspect
+    if (aspectRatio >= 2) {
+      // Écrans très larges (ultrawide, 21:9, etc.)
+      angle = minAngle;
+    } else if (aspectRatio > 1 && aspectRatio < 2) {
+      // Écrans standard en mode paysage (ex. MacBook Pro 13 pouces)
+      angle = minAngle + ((maxAngle - minAngle) * (2 - aspectRatio) / 2); // interpolation progressive
+    } else {
+      // Écrans en mode portrait (aspect ratio < 1)
+      angle = maxAngle;
+    }
+  
+    console.log('Aspect Ratio:', aspectRatio, 'Angle:', angle);
+    return angle;
   }
+  
+  
+  calculateRotationVariance(): number {
+    const minRotation = 155;    // Rotation minimale pour les écrans larges
+    const maxRotation = 183;    // Rotation maximale pour les écrans hauts (mode portrait)
+    
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+  
+    // Calcul du ratio d'aspect (largeur / hauteur) de l'écran
+    const aspectRatio = screenWidth / screenHeight;
+    let rotation;
+  
+    // Utilisation de différentes valeurs de rotation en fonction de catégories de ratio d'aspect
+    if (aspectRatio >= 2) {
+      // Écrans très larges (ultrawide, 21:9, etc.)
+      rotation = minRotation;
+    } else if (aspectRatio > 1 && aspectRatio < 2) {
+      // Écrans standard en mode paysage (16:9, 4:3, etc.)
+      rotation = minRotation + ((maxRotation - minRotation) * (2 - aspectRatio) / 2); // interpolation entre minRotation et maxRotation
+    } else {
+      // Écrans en mode portrait (aspect ratio < 1)
+      rotation = maxRotation;
+    }
+  
+    console.log('Aspect Ratio:', aspectRatio, 'Rotation:', rotation);
+    return rotation;
+  }
+  
+
+  
+  
+  
+  
+  
   // Fonction pour ajuster la taille du placeholder en fonction de la hauteur de .svg-container
   adjustPlaceholderSize() {
     const placeholder = this.el.nativeElement.querySelector('.title-placeholder');
@@ -94,9 +144,9 @@ export class AppComponent implements AfterViewInit {
   }
     // Create falling star animation
     createFallingStar(element: HTMLElement, span: HTMLElement, angle: number): void {
-      const randomDuration = gsap.utils.random(1, 2.5); // Duration between 2 and 5 seconds
+      const randomDuration = gsap.utils.random(0, 0.9); // Duration between 2 and 5 seconds
       const randomDelay = gsap.utils.random(0, 10); // Random delay before the star
-  
+      const repeatDelay = gsap.utils.random(5, 10); // Délai entre les répétitions
       // Randomly pick whether the star starts from the right or bottom side
       let startX: number, startY: number, endX: number, endY: number;
   
@@ -121,7 +171,7 @@ export class AppComponent implements AfterViewInit {
         x: `${startX}vw`,
         y: `${startY}vh`,
         opacity: 0.5,
-        scale: gsap.utils.random(0.5, 1.5),
+        scale: gsap.utils.random(0.5, 1.2),
       });
   
       // Set span rotation (adds 90 degrees to match trajectory direction)
@@ -140,39 +190,35 @@ export class AppComponent implements AfterViewInit {
         ease: 'power1.out',
         delay: randomDelay,
         repeat: -1, // Infinite repeat
+        repeatDelay: repeatDelay, // Délai entre les répétitions
+    onRepeat: () => {
+      // Réinitialisation de l'opacité après chaque cycle
+      gsap.set(element, { opacity: 0 });
+    },
       });
     }
-    calculateRotationVariance(): number {
-      const minWidth = 1200;
-      const maxWidth = 2500;
-      const minRotation = 165;  // Minimum rotation for large screens
-      const maxRotation = 185;  // Maximum rotation for small screens
-  
-      const screenWidth = window.innerWidth;
-  
-      // Calculate the rotation variance based on the screen size
-      return maxRotation + (screenWidth - minWidth) * (minRotation - maxRotation) / (maxWidth - minWidth);
-  }
+
     // Fonction pour redessiner les étoiles filantes avec le nouvel angle
     redrawStars(): void {
-      const borderWrap = this.el.nativeElement.querySelector('.gsap-border');
-      borderWrap.innerHTML = ''; // Réinitialiser le contenu pour recréer les étoiles
-  
-      const angle = this.calculateAngle(); // Recalculer l'angle selon la taille de l'écran
-  
-      for (let i = 0; i < 5; i++) { // Créer 5 étoiles filantes
-        const li = this.renderer.createElement('li');
-        const span = this.renderer.createElement('span');
-  
-        this.renderer.appendChild(li, span);
-        this.renderer.appendChild(borderWrap, li);
-  
-        this.createFallingStar(li, span, angle);
-  
-        //const hue = gsap.utils.random(0, 360);
-        //this.renderer.setStyle(span, 'background-color', `hsl(${hue}, 70%, 90%)`);
+      const borderWrap = this.el.nativeElement.querySelector(".gsap-border");
+      borderWrap.innerHTML = ""; // Supprime les anciennes étoiles
+    
+      const angle = this.calculateAngle(); // Calcul de l'angle des étoiles filantes
+    
+      for (let i = 0; i < 5; i++) {
+        setTimeout(() => {
+          const li = this.renderer.createElement("li");
+          const span = this.renderer.createElement("span");
+    
+          this.renderer.appendChild(li, span);
+          this.renderer.appendChild(borderWrap, li);
+    
+          // Créer une étoile avec un délai unique
+          this.createFallingStar(li, span, angle);
+        }, i * 2000); // Espacer chaque création de 2 secondes
       }
     }
+    
 
   // Écouter le redimensionnement de la fenêtre
   @HostListener('window:resize', ['$event'])
@@ -205,7 +251,7 @@ export class AppComponent implements AfterViewInit {
     const angle = this.calculateAngle(); // Recalculer l'angle selon la taille de l'écran
 
         // Create stars and append them to the borderWrap
-        for (let i = 0; i < 2; i++) { // Créer 5 étoiles filantes
+        /*for (let i = 0; i < 2; i++) { // Créer 5 étoiles filantes
           const li = this.renderer.createElement('li');
           const span = this.renderer.createElement('span');
     
@@ -216,7 +262,7 @@ export class AppComponent implements AfterViewInit {
     
           //const hue = gsap.utils.random(0, 360);
           //this.renderer.setStyle(span, 'background-color', `hsl(${hue}, 70%, 90%)`);
-        }
+        }*/
     
 
        // FIN ETOILES FILANTES
