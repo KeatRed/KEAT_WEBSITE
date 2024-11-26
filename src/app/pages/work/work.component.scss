@@ -207,6 +207,8 @@ body.modal-open {
 
 }
 
+
+
 .wrapper {
   width: 90%;
   display: flex;
@@ -217,7 +219,7 @@ body.modal-open {
 
 .wrapper > div {
 max-width: 100%;
-  color: #000000;
+  color: #fff;
   //background-color: rgba(27, 39, 53, 1);
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(0.2rem, 4vw, 0.7rem);
@@ -227,8 +229,24 @@ max-width: 100%;
   margin-bottom: 1rem;
   animation: gradientOpacity 4s infinite linear;
   background-size: 400% 400%; /* Amplifie encore le mouvement */
-
+  position: relative;
 }
+
+
+.wrapper > div::before {
+  content: ''; /* Nécessaire pour générer le pseudo-élément */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  z-index: -1000; /* Place l'arrière-plan derrière */
+  border-radius: 0.3rem; /* Si les bords arrondis sont requis */
+  
+}
+
+
 @keyframes gradientOpacity {
   0% {
     background: linear-gradient(
@@ -441,6 +459,7 @@ max-width: 100%;
 
 .wrapper ul, .wrapper ol  {
   max-width: 100%;
+  
   display: flex; /* Active Flexbox */
   flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
   justify-content: flex-start; /* Aligne les éléments à gauche (modifiable) */
@@ -483,7 +502,7 @@ max-width: 100%;
   display: flex; /* Utilise Flexbox pour aligner horizontalement */
   align-items: center; /* Centre verticalement le titre et les items */
   width: fit-content; /* Ajuste strictement la largeur au texte */
-
+  color: #fff;
   background: linear-gradient(
     135deg,
     rgba(86, 128, 233, 0.6) 0%,
@@ -502,6 +521,7 @@ max-width: 100%;
   padding: 0.5rem;
   transform: translateZ(20px); /* Décalage en profondeur */
   box-shadow: 0 0.3rem 0.5rem 0px rgba(0, 0, 0, 0.6);
+ 
 }
 
 
@@ -510,7 +530,7 @@ max-width: 100%;
   font-size: clamp(0.5rem, 4vw, 0.6rem);
   font-style: italic;
   font-weight: 600;
-  color: #000; /* Couleur du texte */
+  //color: #000; /* Couleur du texte */
   margin-right: 1rem;
 }
 
@@ -520,6 +540,7 @@ max-width: 100%;
   display: block; /* Les éléments restent empilés verticalement */
   width: fit-content; /* Ajuste strictement la largeur au contenu */
   background-color: #fff;
+  color:#000;
   border: 0.08rem solid #1e2036;
   border-radius: 0.5rem;
   margin-right: 1rem;
@@ -619,11 +640,11 @@ max-width: 100%;
     //font-size: 1rem; /* Ajustez cette taille selon vos besoins */
     line-height: 1.6; /* Améliore la lisibilité en augmentant l'espacement des lignes */
     text-transform: none; /* Supprime la transformation en majuscules */
-    color: #000000; /* Optionnel : couleur légèrement plus douce pour une meilleure lisibilité */
+    color: #fff; /* Optionnel : couleur légèrement plus douce pour une meilleure lisibilité */
     margin-bottom: 1em; /* Espace entre les paragraphes */
 }
 .fade-in-paragraph a{
-  color: #7F53AC; 
+  color: #00ccff; 
 }
 
   .description span {
@@ -645,6 +666,7 @@ max-width: 100%;
     padding: 2em;
     padding-right: 1.5em;
     background-color: #fff;
+    
     border-radius: 20px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25); /* Shadow for the modal */
     position: relative; 
@@ -675,7 +697,7 @@ max-width: 100%;
   background: #f1f1f1;
 }
   .modal__btn {
-    color: #000000;
+    color: #fff;
     //position: sticky; /* This keeps it visible within the modal */
     font-family: 'Montserrat', sans-serif;
     //text-transform: uppercase;
@@ -690,14 +712,8 @@ max-width: 100%;
     cursor: pointer;
     border: 1px solid rgba(255, 255, 255, 0.2);
     //background: linear-gradient(to bottom left, #647DEE 40%, #7F53AC 100%);
-    background: linear-gradient(
-      135deg,
-      rgba(86, 128, 233, 0.6) 0%,
-      rgba(132, 206, 235, 0.25) 25%,
-      rgba(90, 185, 234, 0.3) 50%,
-      rgba(193, 200, 228, 0.2) 75%,
-      rgba(136, 96, 208, 0.3) 100%
-    );
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    opacity: 0.75;
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
     //display: inline-block;
     margin-top: 2rem;
