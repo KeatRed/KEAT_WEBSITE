@@ -34,18 +34,13 @@
 
 .svg-container.minimized {
     position: fixed;
-    //top: -5vh;
-    //left: -38vw;
     width: 30vw;
-    height: 10vh;
-    //margin-top: -10vh;
-    //margin-bottom: 0px;
-    //margin-left: -5vw;
+    height: 10vh; /* Assurez-vous que cette hauteur reste constante */
     transform: scale(0.40);
-    /* Réduit l'échelle à 25% */
     transform-origin: top left;
-    /* Transforme à partir du coin supérieur gauche */
+    transition: transform 0.3s ease, height 0.3s ease, width 0.3s ease; /* Ajoutez des transitions uniquement nécessaires */
 }
+
 
 .SVGclipPath {
     animation: starShine 10s infinite;

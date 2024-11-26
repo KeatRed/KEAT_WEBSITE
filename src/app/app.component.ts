@@ -93,9 +93,15 @@ export class AppComponent implements AfterViewInit {
   
   // Fonction pour ajuster la taille du placeholder en fonction de la hauteur de .svg-container
   adjustPlaceholderSize() {
+
+
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (isMobile) {
+        console.log('Sur mobile : aucune modification du placeholder.');
+        return; // Ne rien faire sur mobile
+    }
     const placeholder = this.el.nativeElement.querySelector('.title-placeholder');
     const svgContainer = this.el.nativeElement.querySelector('.svg-container');
-    //const svgContainerMinimized = this.el.nativeElement.querySelector('.svg-container.minimized');
 
     if (svgContainer) {
       const svgHeight = svgContainer.getBoundingClientRect().height; // Récupère la hauteur de .svg-container
@@ -130,6 +136,16 @@ export class AppComponent implements AfterViewInit {
     const svgContainer = this.el.nativeElement.querySelector('.svg-container');
     const placeholder = this.el.nativeElement.querySelector('.title-placeholder');
 
+    // Vérifier si on est sur mobile
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    if (isMobile) {
+        console.log('Sur mobile : désactivation du comportement minimized');
+        // Ne pas appliquer le comportement minimized sur mobile
+        return;
+    }
+
+
     console.log('AppComponent: Intersection change detected:', isIntersecting);
 
     if (isIntersecting) {
@@ -139,7 +155,7 @@ export class AppComponent implements AfterViewInit {
     } else {
       console.log('SVG is not visible, adding minimized class');
       this.adjustPlaceholderSize(); // Ajuster dynamiquement la taille en fonction du .svg-container
-      this.renderer.addClass(svgContainer, 'minimized');
+      this.renderer.addClass(svgContainer, 'minimized');  
     }
   }
     // Create falling star animation
@@ -271,7 +287,7 @@ export class AppComponent implements AfterViewInit {
       clearTimeout(this.resizeTimer);
       this.resizeTimer = setTimeout(() => {
         // Faire défiler vers le haut de la page
-        window.scrollTo(0, 0);
+        //window.scrollTo(0, 0);
 
         // Exécuter la logique pour remettre le placeholder à 0 et retirer la classe minimized
         const svgContainer = this.el.nativeElement.querySelector('.svg-container');
