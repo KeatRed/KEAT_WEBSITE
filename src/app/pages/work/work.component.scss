@@ -659,7 +659,7 @@ max-width: 100%;
     font-weight: 700;
   }
 
-  .modal__container {
+  .modal__container { 
     max-height: 70vh; /* Modal takes a max height relative to the viewport */
     max-width: 80vw;
     overflow-y: auto; /* Enable scrolling inside the modal */
