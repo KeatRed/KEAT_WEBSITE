@@ -788,43 +788,44 @@ max-width: 100%;
     color: #fff;
     //font-family: serif;
   }
+  $base-path: "/KEAT_WEBSITE";
   #modal-1 .slider ul li:first-of-type {
-    background-image: url("/assets/CaptureSERMS.PNG")
+    background-image: url("#{$base-path}/assets/CaptureSERMS.PNG")
   }
   #modal-1 .slider ul li:nth-of-type(2) {
-    background-image: url("/assets/CaptureSIPIHM.PNG")
+    background-image: url("#{$base-path}/assets/CaptureSIPIHM.PNG")
   }
   #modal-1 .slider ul li:nth-of-type(3) {
-    background-image: url("/assets/CaptureSIPIHM2.PNG")
+    background-image: url("#{$base-path}/assets/CaptureSIPIHM2.PNG")
   }
   #modal-1 .slider ul li:nth-of-type(4) {
-    background-image: url("/assets/ippak.PNG")
+    background-image: url("#{$base-path}/assets/ippak.PNG")
   }
   #modal-1 .slider ul li:last-of-type {
-    background-image: url("/assets/ippak2.PNG")
+    background-image: url("#{$base-path}/assets/ippak2.PNG")
   }
 
   #modal-2 .slider ul li:first-of-type {
-    background-image: url("/assets/synoptique3.png")
+    background-image: url("#{$base-path}/assets/synoptique3.png")
   }
   #modal-2 .slider ul li:nth-of-type(2) {
-    background-image: url("/assets/synoptique.png")
+    background-image: url("#{$base-path}/assets/synoptique.png")
   }
   #modal-2 .slider ul li:nth-of-type(3) {
-    background-image: url("/assets/synoptique4.png")
+    background-image: url("#{$base-path}/assets/synoptique4.png")
   }
   #modal-2 .slider ul li:last-of-type {
-    background-image: url("/assets/CapturePVEA.PNG")
+    background-image: url("#{$base-path}/assets/CapturePVEA.PNG")
   }
 
   #modal-3 .slider ul li:first-of-type {
-    background-image: url("/assets/sdex.png")
+    background-image: url("#{$base-path}/assets/sdex.png")
   }
   #modal-3 .slider ul li:nth-of-type(2) {
-    background-image: url("/assets/sdex2.png")
+    background-image: url("#{$base-path}/assets/sdex2.png")
   }
   #modal-3 .slider ul li:last-of-type {
-    background-image: url("/assets/icissues.JPG")
+    background-image: url("#{$base-path}/assets/icissues.JPG")
   }
   
 
